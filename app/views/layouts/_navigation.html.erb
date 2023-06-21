@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #f0f0f0;">
+  <div class="container">
+    <h1 class="navbar-brand">
+      <a class="navbar-brand" href="#">Blog</a>
+    </h1>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarTogglerDemo01"
+      aria-controls="navbarTogglerDemo01"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse navbar-right d-lg-flex justify-content-end" id="navbarTogglerDemo01">
+      <ul class="navbar-nav">
+        <% if !logged_in %>
+          <li class="nav-item">
+            <%= link_to "Login", login_path, method: :get, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Signup", new_user_path, method: :get, class: "nav-link" %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Category", categories_path, method: :get, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Post", posts_path, method: :get, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Logout", logout_path, method: :delete, class: "nav-link" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+
+  </div>
+</nav>

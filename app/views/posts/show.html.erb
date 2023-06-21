@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="card p-3" style="width: 700px">
+      <div class="row">
+        <div class="col-5">
+            <%= image_tag @post.image, style: "width: 100%; display: inline-block" %>
+        </div>
+        <div class="col-7">
+            <div class="card-body">
+                <h5>
+                    <%= @post.title.capitalize() %>
+                </h5>
+                <small> created 
+                    <span class="text-primary"><%= time_ago_in_words(@post.created_at) %></span> ago
+                </small>
+                <p>Category : 
+                    <span class="badge bg-secondary">
+                        <%= @post.category.name %>
+                    </span>
+                </p>
+                <p class="py-3">
+                    <%= @post.content %>
+                </p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

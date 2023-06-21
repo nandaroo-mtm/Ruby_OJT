@@ -1,0 +1,4 @@
+<%= bootstrap_form_for(category) do |f| %>
+  <%= f.text_field :name, label: "Name", placeholder: "Enter category name" %>
+  <%= f.submit "Save", class: ["btn btn-sm btn-primary"] %>
+<% end %>

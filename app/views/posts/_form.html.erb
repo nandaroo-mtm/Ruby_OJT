@@ -1,0 +1,22 @@
+<%= bootstrap_form_for(post) do |f| %>
+  <% flash.each do |name, msg| %>
+    <div class="text-danger">
+      *<%= msg %>
+    </div>
+  <% end %>
+  <div id="target">
+    <%= image_tag post.image.attached? ? post.image : "default-image.jpg",
+    style: "width: 100px; display: inline-block",
+    id: "preview-image" %>
+  </div>
+  <%= f.text_field :title, label: "Title", placeholder: "Enter post title" %>
+  <%= f.text_area :content, label: "Content", placeholder: "Content" %>
+  <%= f.collection_select :category_id,
+                      categories,
+                      :id,
+                      :name,
+                      include_blank: "Select a value" %>
+  <%= f.file_field :image, label: "Image", placeholder: "Choose image file:" %>
+
+  <%= f.submit "Save", class: ["btn btn-sm btn-primary"] %>
+<% end %>

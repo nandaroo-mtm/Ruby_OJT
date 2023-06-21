@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-6 mx-auto">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="fw-bolder">Category Import</h5>
+        </div>
+        <div class="card-body">
+          <% flash.each do |name, msg| %>
+            <div class="text-danger mb-3">
+              *<%= msg %>
+            </div>
+          <% end %>
+          <%= form_tag categories_import_path, method: :post, multipart: true do %>
+            <%= file_field_tag :file, accept: ".csv" %>
+            <%= submit_tag "⚙️ Import" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
