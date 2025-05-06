@@ -96,4 +96,6 @@ gem 'kaminari'
 
 gem 'pry-byebug'
 
+gem 'google_drive', '~> 3.0'
+
 

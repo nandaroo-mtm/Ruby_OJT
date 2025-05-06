@@ -28,11 +28,11 @@
         <tbody>
           <% @categories.each do |c| %>
             <tr>
-              <th scope="row"><%= c.id %></th>
-              <td style="width: 40%;"><%= c.name %></td>
+              <th scope="row"><%= c[:id] %></th>
+              <td style="width: 40%;"><%= c[:name] %></td>
               <td>
                 <%= link_to "Edit",
-                "/categories/#{c.id}/edit",
+                "/categories/#{c[:id]}/edit",
                 method: :get,
                 class: "btn btn-sm btn-outline-success me-2  mb-sm-2" %>
                 <%= button_to "Delete",

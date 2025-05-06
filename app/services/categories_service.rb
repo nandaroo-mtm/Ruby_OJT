@@ -1,7 +1,9 @@
 class CategoriesService
   class << self
     def listAll
-      @categories = CategoriesRepository.listAll
+      # @categories = CategoriesRepository.listAll
+      service = GssService.new
+      @categories = service.import_data
     end
 
     def newCategory
